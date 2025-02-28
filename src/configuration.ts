@@ -18,7 +18,7 @@ const oidcConfig: OidcConfiguration = {
 
 export const apiPrefix = import.meta.env.VITE_API_PREFIX;
 
-export const SSOEnabled =
-  (import.meta.env.VITE_SSO_ENABLED ?? "true") === "true";
+export const SSOEnabled = false;
+  //  (import.meta.env.VITE_SSO_ENABLED ?? "true") === "true";
 
 export default oidcConfig;
