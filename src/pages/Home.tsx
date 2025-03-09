@@ -6,6 +6,8 @@ import {
 } from "@axa-fr/react-oidc";
 import {useEffect, useState} from "react";
 import {apiPrefix} from "../configuration";
+import Plug from "../components/Plug";
+import { Card } from "reactstrap";
 // import {Link} from "react-router-dom";
 // import Authenticating from "../callbacks/Authenticating";
 // import AuthenticationError from "../callbacks/AuthenticationError";
@@ -40,7 +42,9 @@ const Home = () => {
   }, [fetch]);
 
   return (
+    
     <div>
+      <Card><Plug /></Card>
       <h1 className="display-3">Hello World!</h1>
       <p className="lead">
         Check out <code>src/pages/Home.tsx</code> to see how you can get
