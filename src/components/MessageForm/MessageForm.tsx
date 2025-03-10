@@ -20,7 +20,18 @@ const MessageForm = () => {
           <h1 className="display-3">Welcome to Submit a Message!</h1>
         
             <div className="messageForm">
-                <Form>
+                <Form onSubmit={(e) => {
+                    e.preventDefault()
+                    const formData = new FormData(e.currentTarget);
+                    const body = formData.get("body");
+                    const time = formData.get("time");
+                    const animation = rSelected;
+
+
+                    console.log(animation+", "+body+", "+time);
+                    // console.log()
+                    //can send api req with this information somehow
+                }}>
                     <FormGroup>
                     <Label for="messageBody">
                     Message
@@ -34,7 +45,7 @@ const MessageForm = () => {
                     </FormGroup>
 
                     <h3>How long do you want your message to play? -- (ask 3da about drink creds for InfoSys)</h3>
-                    <input className="col-4" type="number" id="replyNumber" min="5" max="45" step="5" data-bind="value:replyNumber" placeholder="in Minutes"/>
+                    <Input name="time" className="col-4" type="number" id="replyNumber" min="5" max="45" step="5" data-bind="value:replyNumber" placeholder="in Minutes"/>
                     <h3>What Kind of effects would you like? (More will be added soon @stove frequently so I make more of them)<br></br></h3>
                     <FormGroup>
                     <h5>Radio Buttons</h5>
@@ -42,6 +53,7 @@ const MessageForm = () => {
                             <Button
                             color="primary"
                             outline
+                            defaultChecked
                             onClick={() => setRSelected(animation[0])}
                             active={rSelected === animation[0]}
                             >
