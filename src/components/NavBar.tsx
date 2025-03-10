@@ -34,7 +34,7 @@ const NavBar: React.FunctionComponent = () => {
       <Navbar color="primary" dark expand="lg">
         <Container>
           <NavLink to="/" className={"navbar-brand"}>
-            CSH React Boilerplate
+            InfoSys
           </NavLink>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
